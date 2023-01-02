@@ -11,16 +11,11 @@ public class SoftTargetScript : MonoBehaviour
 
     private LayerMask layerMask;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        layerMask = (1 << layerId);
-    }
+    void Start() => layerMask = (1 << layerId);
 
-    // Update is called once per frame
     void Update()
     {
-        validTargets = Physics.OverlapSphere(transform.parent.position, detectionRange, layerMask);
+        validTargets = Physics.OverlapSphere(transform.position, detectionRange, layerMask);
 
         if (validTargets.Length > 0)
         {
@@ -39,6 +34,6 @@ public class SoftTargetScript : MonoBehaviour
     private void OnDrawGizmosSelected() 
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere (transform.parent.position, detectionRange);
+        Gizmos.DrawWireSphere (transform.position, detectionRange);
     }
 }
