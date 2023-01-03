@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class DebugSoftTargetScript : MonoBehaviour
 {
+    Transform player;
     public SoftTargetScript softTargetScript;
     public bool inRange = false;
     bool found = false;
     public MeshRenderer mesh;
 
     // Start is called before the first frame update
-    void Start() => mesh = GetComponent<MeshRenderer>();
+    void Start()
+    {
+        mesh = GetComponent<MeshRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        // transform.LookAt(player);
+
         found = false;
         foreach(Collider collider in softTargetScript.validTargets)
         {
