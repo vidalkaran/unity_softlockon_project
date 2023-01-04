@@ -46,5 +46,4 @@ public class DebugSoftLockManager : MonoBehaviour
         else
             mesh.material.color = Color.white;
     }
-
 }
