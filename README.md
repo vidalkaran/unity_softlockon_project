@@ -1,6 +1,6 @@
 # unity_softlockon_project
 
-The main script is Assets/SoftTargetScript.cs
+The main script is Assets/SoftTargetManager.cs
 
 In order to set this up, you need to create an empty gameobject underneath your main player or actor and add this script to it. 
 
